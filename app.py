@@ -107,8 +107,13 @@ def handle_message(event):
             original_content_url=image_url,
             preview_image_url=image_url
         ))
+        else:
+        reply = "ไม่รู้จักคำสั่งนี้ พิมพ์ !help"
 
-    line_bot_api.reply_message(event.reply_token, messages)
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=reply)
+    )
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
