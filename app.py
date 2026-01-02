@@ -22,10 +22,10 @@ def callback():
 
 # ================== GOOGLE SHEET ==================
 SHEET_ID = "15LvvL5A1X8F4HLqrUEG8dJ9lnzKuYEt2u7hlg8LH2WE"
-SHEET_NAME = "Sheet1"
+SHEET_NAME = "TEST001"
 
 def read_google_sheet():
-    url = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:json&sheet={SHEET_NAME}"
+    url = f"https://docs.google.com/spreadsheets/d/15LvvL5A1X8F4HLqrUEG8dJ9lnzKuYEt2u7hlg8LH2WE/edit?usp=sharing"
     res = requests.get(url)
     data = res.text
 
@@ -107,7 +107,7 @@ def handle_message(event):
             original_content_url=image_url,
             preview_image_url=image_url
         ))
-        else:
+    else:
         reply = "ไม่รู้จักคำสั่งนี้ พิมพ์ !help"
 
     line_bot_api.reply_message(
